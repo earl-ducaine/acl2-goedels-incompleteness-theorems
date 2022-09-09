@@ -120,10 +120,10 @@
 ;;   (if (zerop (fix flg))
 
 
-(defun z2-termp (exp flg symbols)
-  (declare (xargs :guard (and (listp symbols) (or (consp exp) (nlistp exp))
-                               (integerp flg))))
-  (if (zerop (fix flg))
+;; (defun z2-termp (exp flg symbols)
+;;   (declare (xargs :guard (and (listp symbols) (or (consp exp) (nlistp exp))
+;;                                (integerp flg))))
+;;   (if (zerop (fix flg))
 
 
 
@@ -131,17 +131,17 @@
 
 
 
-      (if (consp exp)
-          (and (z2-function (car exp))
-               (symb (car exp) symbols)
-               (z2-termp (cdr exp) 1 symbols)
-               (equal (length (cdr exp))
-                      (degree (car exp))))
-          (z2-variable exp))
-      (if (nlistp exp)
-          t
-          (and (z2-termp (car exp) 0 symbols)
-               (z2-termp (cdr exp) 1 symbols)))))
+;;       (if (consp exp)
+;;           (and (z2-function (car exp))
+;;                (symb (car exp) symbols)
+;;                (z2-termp (cdr exp) 1 symbols)
+;;                (equal (length (cdr exp))
+;;                       (degree (car exp))))
+;;           (z2-variable exp))
+;;       (if (nlistp exp)
+;;           t
+;;           (and (z2-termp (car exp) 0 symbols)
+;;                (z2-termp (cdr exp) 1 symbols)))))
 
 
 
